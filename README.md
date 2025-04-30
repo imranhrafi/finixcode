@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Finixcode Assignment – Football Event Platform
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This project is a modern, mobile-first football event platform built with Next.js, TypeScript, Tailwind CSS, and shadcn/ui. The goal is to provide a clean, scalable, and accessible codebase that demonstrates best practices in React development, UI consistency, and developer experience. The codebase is designed for maintainability, extensibility, and real-world production readiness.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Tech Stack
+
+- **Next.js** (App Router, SSR, file-based routing)
+- **TypeScript** (strict mode)
+- **Tailwind CSS** (utility-first, custom theming)
+- **shadcn/ui** (accessible, customizable UI components)
+- **Bun** (fast JS runtime & package manager)
+- **ESLint** (strict linting)
+
+## Folder Structure
+
+```
+src/
+  components/
+    homepage/         # All homepage-related React components (Hero, InfoSection, etc.)
+    ui/               # Reusable UI components (Button, Card, Dialog, etc. from shadcn/ui)
+  app/
+    navbar/           # Responsive navigation components (mobile & desktop)
+    layout.tsx        # Root layout (global styles, fonts, nav)
+    page.tsx          # Main page entry
+  lib/
+    utils.ts          # Utility functions (e.g., className merging)
+public/               # Static assets (logo, icons, images)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Why this structure?**
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Separation of concerns:** UI atoms/molecules in `ui/`, page-specific logic in `homepage/`, navigation in `app/navbar/`.
+- **Scalability:** Easy to add new features/pages without clutter.
+- **Readability:** Clear, predictable imports and file locations.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Coding Conventions & Best Practices
 
-## Learn More
+- **Naming:**
+  - All files and components use `PascalCase` (e.g., `HeroGallery.tsx`, `InfoSection.tsx`).
+  - Folder names are descriptive and consistent.
+- **Mobile-first design:**
+  - All layouts and components are designed for mobile by default, then enhanced for desktop with Tailwind breakpoints.
+- **Accessibility:**
+  - All interactive elements use semantic HTML and ARIA attributes where needed.
+  - shadcn/ui components are accessible out-of-the-box.
+- **Styling:**
+  - Tailwind CSS for rapid, consistent, and themeable styling.
+  - Custom colors are defined in Tailwind config for maintainability.
+- **Linting & Formatting:**
+  - ESLint with strict rules, enforced via `bun run lint` and pre-commit hooks (husky, lint-staged).
+  - TypeScript strict mode for type safety.
 
-To learn more about Next.js, take a look at the following resources:
+## Why These Choices?
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **shadcn/ui:**
+  - Provides accessible, production-ready UI primitives that are easy to customize and extend.
+- **Tailwind CSS:**
+  - Enables rapid prototyping and enforces design consistency across the app.
+- **Bun:**
+  - Super-fast install, build, and dev experience. Modern alternative to npm/yarn.
+- **Folder structure:**
+  - Mirrors real-world, scalable React projects. Easy for teams to onboard and contribute.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## How to Run & Develop
 
-## Deploy on Vercel
+1. **Install dependencies:**
+   ```bash
+   bun install
+   ```
+2. **Start the development server:**
+   ```bash
+   bun run dev
+   ```
+3. **Open the app:**
+   Visit [http://localhost:3000](http://localhost:3000) in your browser.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contribution & Linting
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Lint before commit:**
+  - Pre-commit hooks ensure all code passes linting (`bun run lint`).
+- **Type safety:**
+  - All code is written in TypeScript with strict mode enabled.
+- **Component-driven:**
+  - All UI is built from reusable, composable components.
+
+## Future Improvements
+
+- Integrate real API/data fetching (currently uses mock data)
+- Add unit and integration tests (Jest, React Testing Library)
+- Expand accessibility testing (axe, Lighthouse)
+- Add dark mode and theme switching
+- Further modularize and document components
+
+_Built with ❤️ for the Finixcode assignment._
